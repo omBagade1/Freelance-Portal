@@ -1,0 +1,91 @@
+Fair enough. That's a good instinct actually — understanding the map before walking the territory.
+
+---
+
+**The Full Picture: Freelance Marketplace API**
+
+Think stripped-down Upwork. Three types of users, real business logic, real complexity.
+
+---
+
+**Core Entities:**
+
+```
+User → can be a Client or Freelancer
+Gig → a service a Freelancer offers
+Order → a Client buys a Gig
+Review → a Client reviews after Order completes
+```
+
+That's it. Everything else is logic around these four things.
+
+---
+
+**How they relate:**
+```
+User (freelancer) → creates many Gigs
+User (client) → places many Orders
+Order → belongs to one Gig, one Client, one Freelancer
+Review → belongs to one Order, one User
+```
+
+---
+
+**The feature progression we'll build:**
+
+**Phase 1 — Foundation**
+- Project setup, MongoDB connection, error handling
+
+**Phase 2 — Auth**
+- Register, Login, JWT tokens, password hashing
+- Refresh tokens (so users don't get logged out every hour)
+
+**Phase 3 — Gigs**
+- Freelancer creates/edits/deletes gigs
+- Anyone can browse/search gigs
+- Filtering by category, price, delivery time
+
+**Phase 4 — Orders**
+- Client places an order
+- Order has states: `pending → active → completed → cancelled`
+- Only valid state transitions allowed (no jumping from pending to completed)
+- Freelancer accepts/delivers, client confirms
+
+**Phase 5 — Reviews**
+- Client can only review after order is completed
+- One review per order, no editing after 24 hours
+- Rating affects freelancer's average score
+
+**Phase 6 — Hardening**
+- Rate limiting
+- Input validation
+- Proper error messages
+- Security headers
+
+---
+
+**What you'll actually learn at each phase:**
+
+| Phase | Concept |
+|---|---|
+| 1 | Project structure, env config, error handling |
+| 2 | Auth, JWT, bcrypt, middleware |
+| 3 | Data modeling, query building, file uploads |
+| 4 | State machines, business logic, transactions |
+| 5 | Data integrity, constraints, aggregations |
+| 6 | Production-level thinking |
+
+---
+
+**What this project is NOT:**
+- No payment gateway (we'll mock it)
+- No real-time chat
+- No frontend
+
+Those aren't shortcuts — they're scope control. Each one is a separate deep topic.
+
+---
+
+Now you have the map. There's no more reason to delay.
+
+Go run that server setup from my previous message. Come back when it's running.
