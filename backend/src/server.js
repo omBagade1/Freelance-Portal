@@ -1,17 +1,21 @@
-import express from "express" 
 import dotenv from "dotenv"
+dotenv.config()
+
+import express from "express" 
 import connectDB from "./config/connection.js"
+import router from "./routes/auth.routes.js"
+
 
 
 //configs
-dotenv.config()
 const app = express()
+app.use(express.json())
+app.use("/api/auth",router)
 connectDB()
 
 //local veriables 
-const PORT = 5000 || process.env.PORT
+const PORT =  process.env.PORT||5000 
 
-app.use(express.json())
 
 app.get("/health",(req,res)=>{
       res.json({ status: 'ok' })
