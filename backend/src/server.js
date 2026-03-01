@@ -4,6 +4,7 @@ dotenv.config()
 import express from "express" 
 import connectDB from "./config/connection.js"
 import router from "./routes/auth.routes.js"
+import protection from "./middleware/auth.middleware.js"
 
 
 
