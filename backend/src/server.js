@@ -3,15 +3,16 @@ dotenv.config()
 
 import express from "express" 
 import connectDB from "./config/connection.js"
-import router from "./routes/auth.routes.js"
-import protection from "./middleware/auth.middleware.js"
+import authRouter from "./routes/auth.routes.js"
+import gigRouter from "./routes/gig.routes.js"
 
 
 
 //configs
 const app = express()
 app.use(express.json())
-app.use("/api/auth",router)
+app.use("/api/auth",authRouter)
+app.use("/api/gigs",gigRouter)
 connectDB()
 
 //local veriables 

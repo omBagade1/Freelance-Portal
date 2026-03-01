@@ -1,7 +1,16 @@
-title         String, required
-description   String, required
-category      String, required
-price         Number, required
-deliveryDays  Number, required
-freelancer    ObjectId, ref: User
-isActive      Boolean, default: true
+
+GET /api/gigs
+□ Get all gigs, no token → 200
+□ Inactive gigs should not appear
+
+GET /api/gigs/:id
+□ Get single gig, no token → 200
+□ Invalid id → 404
+
+
+
+client token :: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OWE0MmMwNDY2MThjNzBhMmRkNWVmMjEiLCJyb2xlIjoiY2xpZW50IiwiaWF0IjoxNzcyMzY2ODUyLCJleHAiOjE3NzI5NzE2NTJ9.hgHQD2IQ6rYaZ_CD-DtT3FzX8wGDDZIkziLZfHUrlss
+
+freelancer token :: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OWE0MmJjODY2MThjNzBhMmRkNWVmMWUiLCJyb2xlIjoiZnJlZWxhbmNlciIsImlhdCI6MTc3MjM2Njc5MiwiZXhwIjoxNzcyOTcxNTkyfQ.PT_fUBLCcIL6b1lkeSdXKkeHOq0zMJdxSIsuZ_yqVBI
+
+"_id": "69a42d156618c70a2dd5ef25"
