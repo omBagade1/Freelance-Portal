@@ -1,0 +1,7 @@
+title         String, required
+description   String, required
+category      String, required
+price         Number, required
+deliveryDays  Number, required
+freelancer    ObjectId, ref: User
+isActive      Boolean, default: true
