@@ -1,9 +1,7 @@
-buyer        → ObjectId, ref: User, required
-seller       → ObjectId, ref: User, required
-gig          → ObjectId, ref: Gig, required
-price        → Number, required
-deliveryDays → Number, required
-status       → enum: ['pending', 'active', 'completed', 'cancelled'], default: 'pending'
+acceptOrder — seller accepts (pending → active)
+completeOrder — seller completes (active → completed)
+cancelOrder — buyer or seller cancels (pending/active → cancelled)
+getMyOrders — returns orders where user is buyer or seller
 
 
 client token :: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OWE0MmMwNDY2MThjNzBhMmRkNWVmMjEiLCJyb2xlIjoiY2xpZW50IiwiaWF0IjoxNzcyMzY2ODUyLCJleHAiOjE3NzI5NzE2NTJ9.hgHQD2IQ6rYaZ_CD-DtT3FzX8wGDDZIkziLZfHUrlss

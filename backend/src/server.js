@@ -5,14 +5,14 @@ import express from "express"
 import connectDB from "./config/connection.js"
 import authRouter from "./routes/auth.routes.js"
 import gigRouter from "./routes/gig.routes.js"
-
-
+import orderRouter from "./routes/order.routes.js"
 
 //configs
 const app = express()
 app.use(express.json())
 app.use("/api/auth",authRouter)
 app.use("/api/gigs",gigRouter)
+app.use("/api/orders", orderRouter)
 connectDB()
 
 //local veriables 
